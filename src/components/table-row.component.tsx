@@ -51,9 +51,13 @@ export const TableRow: FC<TableRowProps> = ({ row, index, setTableData, tableDat
                 </td>
             </tr>
 
-            <tr>
-                <td colSpan={5}>{Object.keys(row.kids).length > 0 && isOpen && <KidsTable data={row.kids} />}</td>
-            </tr>
+            {Object.keys(row.kids).length > 0 && isOpen && (
+                <tr>
+                    <td colSpan={5}>
+                        <KidsTable data={row.kids} />
+                    </td>
+                </tr>
+            )}
         </>
     );
 };
