@@ -1,9 +1,9 @@
 import React, { useState, FC } from "react";
-import { PhoneRecord, Record } from "../data/data";
+import { ITableRow } from "../data/data";
 import { KidsTable } from "./kids-table.component";
 
 interface TableRowKidsProps {
-    row: Record | PhoneRecord;
+    row: ITableRow;
     index: number;
 }
 export const TableRowKids: FC<TableRowKidsProps> = ({ row, index }) => {

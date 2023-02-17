@@ -1,4 +1,4 @@
-export const data: Data[] = [
+export const data: ITableRow[] = [
     {
         data: {
             "Identification number": "34",
@@ -683,51 +683,19 @@ export const data: Data[] = [
     },
 ];
 
-export interface PhoneRecord {
-    data: {
-        "Phone ID": string;
-        "ID of the relative": string;
-        Phone: string;
-    };
-    kids: {};
+interface TableState {
+    readonly tableRows: ITableRow[];
 }
 
-export interface Phone {
-    [has_phone: string]: {
-        records: PhoneRecord[];
-    };
+export interface ITableRow {
+    data: tableData;
+    kids: tableKids | {};
 }
 
-export interface Record {
-    data: {
-        "Relative ID": string;
-        "Patient ID": string;
-        "Is alive?": string;
-        "Frequency of visits": string;
-    };
-    kids: Phone | {};
+export interface tableData {
+    [key: string]: string;
 }
 
-export interface Relatives {
-    [has_relatives: string]: {
-        records: Record[];
-    };
-}
-
-export interface UserData {
-    "Identification number": string;
-    Name: string;
-    Gender: string;
-    Risk: string;
-    "Hair length": string;
-    IQ: string;
-    "Admission date": string;
-    "Last breakdown": string;
-    "Yearly fee": string;
-    "Knows the Joker?": "true" | "false" | "";
-}
-
-export interface Data {
-    data: UserData;
-    kids: Relatives | {};
+export interface tableKids {
+    [key: string]: { records: ITableRow[] };
 }

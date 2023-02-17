@@ -1,9 +1,9 @@
 import React, { FC } from "react";
-import { Phone, Relatives } from "../data/data";
+import { tableKids } from "../data/data";
 import { TableRowKids } from "./table-row-kids.component";
 
 interface KidsTableProps {
-    data: Relatives | Phone;
+    data: tableKids;
 }
 
 export const KidsTable: FC<KidsTableProps> = ({ data }) => {
@@ -25,7 +25,7 @@ export const KidsTable: FC<KidsTableProps> = ({ data }) => {
                     </tr>
                 </thead>
                 <tbody>
-                    {data[kidsName].records.map((row, index) => (
+                    {data[kidsName].records.map((row, index: number) => (
                         <TableRowKids key={index} row={row} index={index} />
                     ))}
                 </tbody>

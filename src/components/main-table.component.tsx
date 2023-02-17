@@ -1,10 +1,10 @@
 import React, { FC } from "react";
-import { Data } from "../data/data";
+import { ITableRow } from "../data/data";
 import { TableRow } from "./table-row.component";
 
 interface MainTableProps {
-    data: Data[];
-    setTableData: React.Dispatch<React.SetStateAction<any[]>>;
+    data: ITableRow[];
+    setTableData: React.Dispatch<React.SetStateAction<ITableRow[]>>;
 }
 
 export const MainTable: FC<MainTableProps> = ({ data, setTableData }) => {
